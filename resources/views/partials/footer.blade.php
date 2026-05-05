@@ -42,11 +42,11 @@
                     </div>
                 </div>
 
-                <div class="mt-8 flex flex-wrap items-center gap-4 opacity-70 grayscale hover:grayscale-0 transition-all duration-300">
-                    <div class="h-10 w-24 bg-blue-600 rounded flex items-center justify-center text-[10px] font-bold text-white uppercase text-center px-1">Đã thông báo bộ công thương</div>
-                    <div class="h-10 w-20 bg-green-500 rounded flex items-center justify-center text-xs font-black text-white">IPv6</div>
-                    <div class="h-10 w-20 bg-gray-200 rounded flex items-center justify-center text-[10px] font-bold text-gray-700">IQNet</div>
-                    <div class="h-10 w-16 bg-gray-200 rounded flex items-center justify-center text-[10px] font-bold text-gray-700">QUACERT</div>
+                <div class="mt-8 flex flex-wrap items-center gap-6">
+                    <a href="http://online.gov.vn/Home/WebDetails/23871" target="_blank" rel="noopener noreferrer">
+                        <img src="/images/dathongbao.png" alt="Đã thông báo bộ công thương" class="h-12 w-auto">
+                    </a>
+                    <img src="/images/ipv6.png" alt="IPv6 Ready" class="h-10 w-auto">
                 </div>
             </div>
 
