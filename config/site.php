@@ -58,7 +58,7 @@ return [
     'hero_slides' => [
         [
             'id' => 'slide-1',
-            'image' => 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?q=80&w=2232&auto=format&fit=crop',
+            'image' => '/images/banner-xi-6-_1_.webp',
             'subtitle' => 'Xi Măng Cẩm Phả',
             'title' => "NHÀ MÁY XI MĂNG\nCẨM PHẢ",
             'description' => 'Dây chuyền Công nghệ với lò quay theo phương pháp khô, thiết bị công nghệ tiên tiến nhất.',
@@ -67,7 +67,7 @@ return [
         ],
         [
             'id' => 'slide-2',
-            'image' => 'https://images.unsplash.com/photo-1504307651254-35680f356f27?q=80&w=2070&auto=format&fit=crop',
+            'image' => '/images/xm.jpg',
             'subtitle' => 'Công nghệ hiện đại',
             'title' => "CHẤT LƯỢNG\nNHẬT BẢN",
             'description' => 'Dây chuyền sản xuất tự động hóa từ nhà thầu Kawasaki, đảm bảo chất lượng xi măng ổn định và thân thiện với môi trường.',
@@ -76,7 +76,7 @@ return [
         ],
         [
             'id' => 'slide-3',
-            'image' => 'https://images.unsplash.com/photo-1541888086425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop',
+            'image' => '/images/xm1.jpg',
             'subtitle' => 'Tiêu chuẩn quốc tế',
             'title' => "ĐỒNG HÀNH\nXÂY DỰNG",
             'description' => 'Hơn 15 năm kinh nghiệm sản xuất và cung ứng xi măng chất lượng cao, đồng hành cùng hàng ngàn công trình trọng điểm quốc gia.',
@@ -85,30 +85,12 @@ return [
         ],
         [
             'id' => 'slide-4',
-            'image' => 'https://images.unsplash.com/photo-1473876637968-30680cb70621?q=80&w=2070&auto=format&fit=crop',
+            'image' => '/images/xm2.jpg',
             'subtitle' => 'Phát triển bền vững',
             'title' => "VÌ MÔI TRƯỜNG\nXANH",
             'description' => 'Chúng tôi cam kết áp dụng công nghệ lọc bụi hiện đại và tối ưu hóa năng lượng, hướng tới mục tiêu sản xuất xi măng xanh bền vững.',
             'cta_text' => 'Môi trường',
             'cta_link' => '/chinh-sach-chat-luong',
-        ],
-        [
-            'id' => 'slide-5',
-            'image' => 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop',
-            'subtitle' => 'Vận tải & Logistics',
-            'title' => "CUNG ỨNG\nNHANH CHÓNG",
-            'description' => 'Hệ thống kho bãi và đội xe vận tải chuyên nghiệp, đảm bảo cung ứng xi măng kịp thời đến mọi chân công trình trên toàn quốc.',
-            'cta_text' => 'Liên hệ',
-            'cta_link' => '/lien-he',
-        ],
-        [
-            'id' => 'slide-6',
-            'image' => 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop',
-            'subtitle' => 'Văn hóa doanh nghiệp',
-            'title' => "CON NGƯỜI\nLÀ CỐT LÕI",
-            'description' => 'Môi trường làm việc chuyên nghiệp, đoàn kết và sáng tạo là nền tảng giúp Xi măng Cẩm Phả không ngừng vươn xa.',
-            'cta_text' => 'Văn hóa',
-            'cta_link' => '/gioi-thieu',
         ],
     ],
 
