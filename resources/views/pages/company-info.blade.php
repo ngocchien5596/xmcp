@@ -70,7 +70,11 @@
                 <div class="space-y-4 text-[#333] text-sm md:text-[15.5px] leading-relaxed">
                     <div class="flex gap-2">
                         <span class="font-bold shrink-0">1. Tên doanh nghiệp:</span>
-                        <span class="font-bold uppercase">{{ $site['company_info']['owner'] }}</span>
+                        <span class="font-bold uppercase">{{ $site['company_info']['enterprise_name'] }}</span>
+                    </div>
+                    <div class="flex gap-2">
+                        <span class="font-bold shrink-0">2. Cơ quan chủ quản:</span>
+                        <span>{{ $site['company_info']['managing_agency'] }}</span>
                     </div>
                     <div class="flex gap-2">
                         <span class="font-bold shrink-0">2. Địa chỉ:</span>
@@ -107,7 +111,11 @@
                     </div>
                     <div class="flex gap-2">
                         <span class="font-bold shrink-0">9. Đại diện pháp luật:</span>
-                        <span><strong class="text-gray-900">{{ $site['company_info']['responsible_person'] }}</strong> – Chức vụ: Tổng Giám đốc</span>
+                        <span><strong class="text-gray-900">{{ $site['company_info']['legal_representative'] }}</strong> – Chức vụ: Tổng Giám đốc</span>
+                    </div>
+                    <div class="flex gap-2">
+                        <span class="font-bold shrink-0">10. Phụ trách nội dung:</span>
+                        <span>{{ $site['company_info']['content_manager'] }}</span>
                     </div>
                     <div class="flex gap-2">
                         <span class="font-bold shrink-0">10. Mã số thuế:</span>
