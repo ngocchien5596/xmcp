@@ -1,4 +1,5 @@
 <section class="bg-[#F4EFEA] py-16 md:py-24 relative overflow-hidden">
+    <div style="background: blue; color: white; padding: 10px; text-align: center;">CAROUSEL DEBUG</div>
     <div class="mx-auto max-w-[1440px] px-4 md:px-8">
         @include('components.ui.section-title', ['title' => 'Sản phẩm'])
 

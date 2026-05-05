@@ -4,9 +4,9 @@
         class="h-full w-full object-cover transition-all duration-700 group-hover:scale-110 motion-image">
     
     <!-- Persistent Bottom Title Bar (Always Visible) -->
-    <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black via-black/80 to-transparent flex items-end justify-center pb-6 transition-opacity duration-300 group-hover:opacity-0 z-10">
-        <h3 class="px-4 text-sm font-black uppercase tracking-wider text-white text-center drop-shadow-md">
-            {{ $product['title'] }}
+    <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 100px; background: red; display: flex; align-items: center; justify-content: center; z-index: 9999;">
+        <h3 style="color: white; font-size: 20px; font-weight: bold; text-transform: uppercase;">
+            VERIFY: {{ $product['title'] }}
         </h3>
     </div>
 
