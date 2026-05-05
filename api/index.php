@@ -1,9 +1,9 @@
 <?php
 
-// 1. Production Error Reporting
-ini_set('display_errors', 0);
-ini_set('display_startup_errors', 0);
-error_reporting(0);
+// 1. Production Error Reporting (Set to 1 temporarily to see the crash if it happens)
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 try {
     // 2. Prepare writable directories
@@ -13,7 +13,7 @@ try {
     }
 
     // 3. Set Environment
-    $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http';
+    $protocol = 'https'; // Force https for Vercel
     $host = $_SERVER['HTTP_HOST'] ?? 'localhost';
     $appUrl = $protocol . '://' . $host;
 
@@ -27,22 +27,23 @@ try {
     putenv('DB_DATABASE=:memory:');
     putenv('ILLUMINATE_STORAGE_PATH=/tmp');
 
-    // 4. Bootstrap Laravel
+    // 4. Load Laravel
     require __DIR__ . '/../vendor/autoload.php';
     $app = require_once __DIR__ . '/../bootstrap/app.php';
 
-    // 5. Force Writable Paths and HTTPS
+    // 5. Force Writable Paths
     $app->useBootstrapPath('/tmp/bootstrap');
     $app->useStoragePath('/tmp');
-    
-    // Force HTTPS for all generated URLs
-    URL::forceScheme('https');
 
-    // 6. Force Config
+    // 6. Force Config and HTTPS safely
     $app->booting(function ($app) use ($appUrl) {
         $app['config']->set('view.compiled', '/tmp/framework/views');
         $app['config']->set('app.url', $appUrl);
         $app['config']->set('app.asset_url', $appUrl);
+        
+        if (class_exists(\Illuminate\Support\Facades\URL::class)) {
+            \Illuminate\Support\Facades\URL::forceScheme('https');
+        }
     });
 
     // 7. Handle Request
@@ -53,6 +54,8 @@ try {
     $kernel->terminate($request, $response);
 
 } catch (\Throwable $e) {
-    http_response_code(500);
-    echo "Internal Server Error";
+    echo "<h1>Critical Error</h1>";
+    echo "<b>Message:</b> " . $e->getMessage() . "<br>";
+    echo "<b>File:</b> " . $e->getFile() . "<br>";
+    echo "<pre>" . $e->getTraceAsString() . "</pre>";
 }
