@@ -607,3 +607,43 @@ body {
         box-shadow: var(--shadow-card-rest) !important;
     }
 }
+/* ─────────────────────────────────────────────────
+   12. PRODUCT CAROUSEL — Horizontal scroll with nav
+   ───────────────────────────────────────────────── */
+
+.product-carousel {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.product-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.product-carousel-nav {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 999px;
+    background: #ED1C24;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    transition: background 220ms var(--motion-ease), transform 220ms var(--motion-ease), opacity 220ms var(--motion-ease);
+    border: none;
+    outline: none;
+}
+
+.product-carousel-nav:hover {
+    background: #B80000;
+    transform: translateY(-1px);
+    cursor: pointer;
+}
+
+.product-carousel-nav:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+    transform: none;
+}

@@ -6,7 +6,48 @@ document.addEventListener('DOMContentLoaded', function () {
     initMobileMenu();
     initPdfModal();
     initScrollReveal();
+    initProductCarousel();
 });
+
+function initProductCarousel() {
+    document.querySelectorAll('[data-product-carousel]').forEach((carousel) => {
+        const section = carousel.closest('section');
+        if (!section) return;
+
+        const prev = section.querySelector('.product-carousel-prev');
+        const next = section.querySelector('.product-carousel-next');
+
+        if (!prev || !next) return;
+
+        const getStep = () => {
+            const firstCard = carousel.querySelector(':first-child');
+            if (!firstCard) return 360;
+            const style = window.getComputedStyle(carousel);
+            const gap = parseInt(style.columnGap || style.gap || '24', 10);
+            return firstCard.getBoundingClientRect().width + gap;
+        };
+
+        const updateButtons = () => {
+            const maxScroll = carousel.scrollWidth - carousel.clientWidth - 2;
+            prev.disabled = carousel.scrollLeft <= 2;
+            next.disabled = carousel.scrollLeft >= maxScroll;
+        };
+
+        prev.addEventListener('click', () => {
+            carousel.scrollBy({ left: -getStep(), behavior: 'smooth' });
+        });
+
+        next.addEventListener('click', () => {
+            carousel.scrollBy({ left: getStep(), behavior: 'smooth' });
+        });
+
+        carousel.addEventListener('scroll', updateButtons, { passive: true });
+        window.addEventListener('resize', updateButtons);
+        
+        // Initial state
+        setTimeout(updateButtons, 100);
+    });
+}
 
 function initMobileMenu() {
     const mobileToggle = document.getElementById('mobile-menu-toggle');
