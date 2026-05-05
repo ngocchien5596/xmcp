@@ -1,10 +1,12 @@
 <?php
 
-// Set storage path to /tmp for Vercel (read-only filesystem workaround)
-// This is critical for Laravel's compiled views, cache, and sessions
+// HEALTH CHECK: Uncomment the line below to test if PHP is executing at all
+// die('PHP IS ALIVE AND WORKING');
+
+// Workaround for read-only filesystem
 putenv('ILLUMINATE_STORAGE_PATH=/tmp');
 
-// Ensure storage subdirectories exist in /tmp
+// Ensure storage subdirectories
 $storagePaths = [
     '/tmp/framework/views',
     '/tmp/framework/cache',
@@ -18,5 +20,5 @@ foreach ($storagePaths as $path) {
     }
 }
 
-// Forward to the real index.php
+// Forward to Laravel
 require __DIR__ . '/../public/index.php';
