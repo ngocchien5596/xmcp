@@ -1,32 +1,49 @@
 <?php
 
-// 1. Enable error reporting for debugging on Vercel
+// 1. Force display errors
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-// 2. Workaround for read-only filesystem
-putenv('ILLUMINATE_STORAGE_PATH=/tmp');
+echo "PHP Version: " . PHP_VERSION . "<br>";
 
-// Ensure storage subdirectories exist in /tmp
-$storagePaths = [
-    '/tmp/framework/views',
-    '/tmp/framework/cache',
-    '/tmp/framework/sessions',
-    '/tmp/logs',
-];
+try {
+    // 2. Workaround for read-only filesystem
+    putenv('ILLUMINATE_STORAGE_PATH=/tmp');
 
-foreach ($storagePaths as $path) {
-    if (!is_dir($path)) {
-        mkdir($path, 0755, true);
+    // Ensure storage subdirectories
+    $storagePaths = [
+        '/tmp/framework/views',
+        '/tmp/framework/cache',
+        '/tmp/framework/sessions',
+        '/tmp/logs',
+    ];
+
+    foreach ($storagePaths as $path) {
+        if (!is_dir($path)) {
+            mkdir($path, 0755, true);
+        }
     }
-}
 
-// 3. Verify autoloader exists
-$autoloader = __DIR__ . '/../vendor/autoload.php';
-if (!file_exists($autoloader)) {
-    die("Error: Composer autoloader not found at $autoloader. Please check build logs.");
-}
+    // 3. Verify files
+    $autoloader = __DIR__ . '/../vendor/autoload.php';
+    if (!file_exists($autoloader)) {
+        die("Fatal Error: vendor/autoload.php not found. Current DIR: " . __DIR__);
+    }
 
-// 4. Forward to Laravel
-require __DIR__ . '/../public/index.php';
+    $appPath = __DIR__ . '/../bootstrap/app.php';
+    if (!file_exists($appPath)) {
+        die("Fatal Error: bootstrap/app.php not found.");
+    }
+
+    // 4. Try to boot Laravel
+    require __DIR__ . '/../public/index.php';
+
+} catch (\Throwable $e) {
+    echo "<h1>Laravel Boot Error</h1>";
+    echo "<b>Message:</b> " . $e->getMessage() . "<br>";
+    echo "<b>File:</b> " . $e->getFile() . "<br>";
+    echo "<b>Line:</b> " . $e->getLine() . "<br>";
+    echo "<h2>Stack Trace:</h2>";
+    echo "<pre>" . $e->getTraceAsString() . "</pre>";
+}
