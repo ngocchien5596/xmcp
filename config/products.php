@@ -9,7 +9,8 @@ return [
             'title' => 'Xi măng PCB 30',
             'subtitle' => 'Giải pháp tối ưu cho xây trát và công trình dân dụng',
             'use_case' => 'Sử dụng cho các công trình dân dụng, xây tô và bê tông cường độ thấp',
-            'image' => '/img/products/cement-set.png',
+            'image' => asset('images/pcb30.png'),
+
             'benefits' => [
                 'Vữa dẻo siêu kết dính, dễ thi công',
                 'Cường độ ổn định, phát triển nhanh',
@@ -138,7 +139,8 @@ return [
             'title' => 'Xi măng Econs 40',
             'subtitle' => 'Sự lựa chọn kinh tế và thân thiện môi trường',
             'use_case' => 'Dùng cho xây, tô, lát nền và trang trí nội ngoại thất',
-            'image' => '/img/products/cement-set.png',
+            'image' => asset('images/econs40.webp'),
+
             'benefits' => [
                 'Giảm phát thải CO2 trong quá trình sản xuất',
                 'Độ mịn cao, bề mặt hoàn thiện láng mịn',
@@ -163,7 +165,8 @@ return [
             'title' => 'Xi măng Xây trát cao cấp',
             'subtitle' => 'Chuyên dụng cho bề mặt tường láng mịn tuyệt đối',
             'use_case' => 'Tô trát tường trong và ngoài nhà, trang trí thẩm mỹ cao',
-            'image' => '/img/products/cement-set.png',
+            'image' => asset('images/xaytrat.png'),
+
             'benefits' => [
                 'Siêu dẻo, giữ nước cực lâu',
                 'Hạn chế tối đa rạn nứt chân chim',
@@ -213,7 +216,8 @@ return [
             'title' => 'Xi măng PCB40 đóng bao Jumbo 1,5 tấn',
             'subtitle' => 'Tiện lợi cho các trạm trộn và dự án quy mô lớn',
             'use_case' => 'Cung cấp cho trạm trộn bê tông tươi, công trình hạ tầng lớn',
-            'image' => '/img/products/cement-set.png',
+            'image' => asset('images/pcb40-jumbo.png'),
+
             'benefits' => [
                 'Chất lượng ổn định tương đương xi măng rời',
                 'Quy cách đóng gói lớn giúp giảm hao hụt và chi phí bao bì',
