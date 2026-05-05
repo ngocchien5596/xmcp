@@ -2,9 +2,11 @@
     {{-- Image Container with Title Overlay --}}
     <div style="position: relative; width: 100%; aspect-ratio: 4/3; overflow: hidden; background-color: #f3f4f6;">
         <a href="{{ route('news.show', $article['slug']) }}" style="display: block; width: 100%; height: 100%;">
-            <img src="{{ $article['image'] }}" 
+            <img src="{{ asset($article['image']) }}" 
                  alt="{{ $article['title'] }}" 
                  loading="lazy" 
+                 width="400" 
+                 height="260" 
                  class="h-full w-full object-cover motion-image"
                  style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
         </a>

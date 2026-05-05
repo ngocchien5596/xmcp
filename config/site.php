@@ -120,7 +120,7 @@ return [
         [
             'id' => 'culture-3',
             'title' => 'Giải Pickleball Công ty Xi măng Cẩm Phả mở rộng năm 2025 – Rèn luyện thể thao, gắn kết tinh thần',
-            'image' => asset('images/pickleball.webp'),
+            'image' => 'images/pickleball.webp',
         ],
     ],
 
@@ -129,7 +129,7 @@ return [
             'id' => 'project-1',
             'title' => 'CÔNG VIÊN ĐẠI DƯƠNG TẠI HẠ LONG - QUẢNG NINH',
             'category' => 'Công trình trọng điểm',
-            'image' => asset('images/cv1.jpg'),
+            'image' => 'images/cv1.jpg',
         ],
         [
             'id' => 'project-2',

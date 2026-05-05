@@ -1,7 +1,7 @@
 <section class="relative w-full overflow-hidden bg-[#1a1a1a]" style="height: clamp(380px, 50vw, 620px)" id="hero-slider">
     @foreach($heroSlides as $index => $slide)
         <div class="hero-slide absolute inset-0 transition-opacity duration-1000 {{ $index === 0 ? 'z-10 opacity-100' : 'z-0 opacity-0' }}" data-index="{{ $index }}">
-            <img src="{{ $slide['image'] }}" alt="{{ $slide['subtitle'] }}" class="h-full w-full object-cover {{ $index === 0 ? 'hero-bg-animate' : '' }}" {{ $index === 0 ? '' : 'loading=lazy' }} width="1920" height="620">
+            <img src="{{ asset($slide['image']) }}" alt="{{ $slide['subtitle'] }}" class="h-full w-full object-cover {{ $index === 0 ? 'hero-bg-animate' : '' }}" {{ $index === 0 ? '' : 'loading=lazy' }} width="1920" height="620">
             <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10 hero-overlay-animate"></div>
             <div class="absolute inset-0 bg-gradient-to-l from-black/30 via-transparent to-transparent hero-overlay-animate"></div>
         </div>

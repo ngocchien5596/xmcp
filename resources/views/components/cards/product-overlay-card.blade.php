@@ -4,7 +4,7 @@
     data-animate>
     
     <!-- Background Image -->
-    <img src="{{ $product['image'] }}" alt="{{ $product['title'] }}" loading="lazy" width="400" height="533" 
+    <img src="{{ asset($product['image']) }}" alt="{{ $product['title'] }}" loading="lazy" width="400" height="533" 
         class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04] motion-image">
     
     <!-- Hover Detail Overlay (Visible only on Hover) -->
