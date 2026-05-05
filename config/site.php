@@ -16,10 +16,13 @@ return [
 
     'company_info' => [
         'owner' => 'Công ty Cổ Phần Xi măng Cẩm Phả - Chi nhánh Tập đoàn Công nghiệp – Viễn thông quân đội.',
+        'full_name' => 'CÔNG TY CỔ PHẦN XI MĂNG CẨM PHẢ - CHI NHÁNH TẬP ĐOÀN CÔNG NGHIỆP – VIỄN THÔNG QUÂN ĐỘI.',
         'tax_issued_by' => 'Sở Kế hoạch & Đầu tư tỉnh Quảng Ninh',
         'tax_first_date' => '04/08/2008',
         'tax_change' => 'đăng ký thay đổi lần thứ 7 ngày 05/09/2018',
         'responsible_person' => 'Ông Ngô Thế Hưng',
+        'legal_representative' => 'Ông Ngô Thế Hưng',
+        'position' => 'Tổng Giám đốc',
     ],
 
     'social_links' => [
