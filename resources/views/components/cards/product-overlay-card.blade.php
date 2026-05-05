@@ -1,5 +1,6 @@
 <a href="{{ route('products.show', $product['slug']) }}" 
     class="motion-border-card group relative block h-[420px] w-[260px] overflow-hidden bg-[#222] md:h-[470px] md:w-[340px] lg:w-[360px] reveal reveal-up" 
+    style="overflow: hidden !important;"
     data-animate>
     
     <!-- Background Image -->

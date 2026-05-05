@@ -13,9 +13,9 @@
             </div>
         </div>
 
-        <div class="product-carousel flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth pb-8" data-product-carousel>
+        <div class="product-carousel scrollbar-hide flex snap-x snap-mandatory gap-6 overflow-x-auto overflow-y-hidden scroll-smooth pb-8" data-product-carousel>
             @foreach($products as $product)
-                <div class="shrink-0 snap-start">
+                <div class="shrink-0 snap-start overflow-hidden">
                     @include('components.cards.product-overlay-card', ['product' => $product])
                 </div>
             @endforeach
