@@ -23,7 +23,8 @@ return [
             'title' => 'Giải Pickleball Công ty Xi măng Cẩm Phả mở rộng năm 2025 – Khi thể thao là cầu nối gắn kết và hợp tác trong công việc',
             'excerpt' => 'Chiều ngày 05/11/2025, Công ty Cổ phần Xi măng Cẩm Phả đã tổ chức Giải Pickleball mở rộng năm 2025 trong không khí tưng bừng, phấn khởi và tràn đầy năng lượng.',
             'content' => '<p>Chiều ngày 05/11/2025, Công ty Cổ phần Xi măng Cẩm Phả đã tổ chức Giải Pickleball mở rộng năm 2025 trong không khí tưng bừng, phấn khởi và tràn đầy năng lượng.</p><p>Giải đấu là dịp để cán bộ công nhân viên giao lưu, rèn luyện sức khỏe và tăng cường tinh thần đoàn kết.</p>',
-            'image' => 'https://images.unsplash.com/photo-1521737604893-d14cc237f952?q=80&w=2070&auto=format&fit=crop',
+            'image' => asset('images/pickleball.webp'),
+
             'category' => 'company-activity',
             'author' => 'Ban Truyền thông',
             'published_at' => '2025-11-05',

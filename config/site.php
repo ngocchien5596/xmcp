@@ -120,7 +120,7 @@ return [
         [
             'id' => 'culture-3',
             'title' => 'Giải Pickleball Công ty Xi măng Cẩm Phả mở rộng năm 2025 – Rèn luyện thể thao, gắn kết tinh thần',
-            'image' => 'https://images.unsplash.com/photo-1526676037777-05a232554f77?q=80&w=2070&auto=format&fit=crop',
+            'image' => asset('images/pickleball.webp'),
         ],
     ],
 
@@ -129,7 +129,7 @@ return [
             'id' => 'project-1',
             'title' => 'CÔNG VIÊN ĐẠI DƯƠNG TẠI HẠ LONG - QUẢNG NINH',
             'category' => 'Công trình trọng điểm',
-            'image' => 'https://images.unsplash.com/photo-1541888086425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop',
+            'image' => asset('images/cv1.jpg'),
         ],
         [
             'id' => 'project-2',
