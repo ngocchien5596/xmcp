@@ -15,11 +15,11 @@ return [
     'tax_code' => '5700804196',
 
     'company_info' => [
-        'owner' => 'Công ty Cổ Phần Xi măng Cẩm Phả',
+        'owner' => 'Công ty Cổ Phần Xi măng Cẩm Phả - Chi nhánh Tập đoàn Công nghiệp – Viễn thông quân đội.',
         'tax_issued_by' => 'Sở Kế hoạch & Đầu tư tỉnh Quảng Ninh',
         'tax_first_date' => '04/08/2008',
         'tax_change' => 'đăng ký thay đổi lần thứ 7 ngày 05/09/2018',
-        'responsible_person' => 'Ông Nguyễn Thái Hưng',
+        'responsible_person' => 'Ông Ngô Thế Hưng',
     ],
 
     'social_links' => [
