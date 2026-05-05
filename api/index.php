@@ -1,7 +1,7 @@
 <?php
 
 // HEALTH CHECK: Uncomment the line below to test if PHP is executing at all
-// die('PHP IS ALIVE AND WORKING');
+die('PHP IS ALIVE AND WORKING');
 
 // Workaround for read-only filesystem
 putenv('ILLUMINATE_STORAGE_PATH=/tmp');
