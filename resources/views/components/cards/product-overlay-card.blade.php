@@ -3,15 +3,15 @@
     <img src="{{ $product['image'] }}" alt="{{ $product['title'] }}" loading="lazy" width="400" height="533" 
         class="h-full w-full object-cover transition-all duration-700 group-hover:scale-110 motion-image">
     
-    <!-- Persistent Bottom Title Bar (Always Visible) -->
-    <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 100px; background: red; display: flex; align-items: center; justify-content: center; z-index: 9999;">
-        <h3 style="color: white; font-size: 20px; font-weight: bold; text-transform: uppercase;">
-            VERIFY: {{ $product['title'] }}
+    <!-- Bottom Title Bar (Always Visible) -->
+    <div class="absolute bottom-0 left-0 right-0 h-16 bg-black/80 flex items-center justify-center transition-opacity duration-300 group-hover:opacity-0 z-10">
+        <h3 class="px-4 text-sm font-bold uppercase tracking-wider text-white text-center">
+            {{ $product['title'] }}
         </h3>
     </div>
 
     <!-- Hover Detail Overlay (Visible on Hover) -->
-    <div class="absolute inset-0 bg-black/80 flex flex-col items-center justify-center p-6 text-center opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0 z-20">
+    <div class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center p-6 text-center opacity-0 group-hover:opacity-100 transition-all duration-500 z-20">
         <h3 class="text-lg font-black uppercase tracking-widest text-[var(--color-brand-red)] mb-4">{{ $product['title'] }}</h3>
         
         @if(!empty($product['specifications']))
