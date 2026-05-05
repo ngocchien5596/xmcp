@@ -1,0 +1,66 @@
+<?php
+
+return [
+    'categories' => [
+        ['label' => 'Tất cả', 'value' => null],
+        ['label' => 'Năm 2024', 'value' => '2024'],
+        ['label' => 'Năm 2023', 'value' => '2023'],
+        ['label' => 'Năm 2022', 'value' => '2022'],
+    ],
+    'reports' => [
+        [
+            'title' => 'Báo cáo tài chính quý 1 năm 2024 (Đã soát xét)',
+            'year' => '2024',
+            'file_url' => '/070404-vn-summary-fs.pdf',
+            'pdf_url' => '/070404-vn-summary-fs.pdf',
+            'category' => 'Báo cáo tài chính',
+            'icon' => 'pdf',
+            'description' => 'Báo cáo tài chính quý 1 năm 2024 đã được soát xét.',
+        ],
+        [
+            'title' => 'Báo cáo tài chính năm 2023 (Kiểm toán)',
+            'year' => '2023',
+            'file_url' => '/070404-vn-summary-fs.pdf',
+            'pdf_url' => '/070404-vn-summary-fs.pdf',
+            'category' => 'Báo cáo tài chính',
+            'icon' => 'pdf',
+            'description' => 'Báo cáo tài chính năm 2023 đã được kiểm toán.',
+        ],
+        [
+            'title' => 'Báo cáo quản trị công ty năm 2023',
+            'year' => '2023',
+            'file_url' => '/070404-vn-summary-fs.pdf',
+            'pdf_url' => '/070404-vn-summary-fs.pdf',
+            'category' => 'Quản trị công ty',
+            'icon' => 'pdf',
+            'description' => 'Báo cáo quản trị công ty năm 2023.',
+        ],
+        [
+            'title' => 'Nghị quyết Đại hội đồng cổ đông thường niên 2023',
+            'year' => '2023',
+            'file_url' => '/070404-vn-summary-fs.pdf',
+            'pdf_url' => '/070404-vn-summary-fs.pdf',
+            'category' => 'Nghị quyết',
+            'icon' => 'pdf',
+            'description' => 'Nghị quyết Đại hội đồng cổ đông thường niên năm 2023.',
+        ],
+        [
+            'title' => 'Báo cáo tài chính năm 2022 (Kiểm toán)',
+            'year' => '2022',
+            'file_url' => '/070404-vn-summary-fs.pdf',
+            'pdf_url' => '/070404-vn-summary-fs.pdf',
+            'category' => 'Báo cáo tài chính',
+            'icon' => 'pdf',
+            'description' => 'Báo cáo tài chính năm 2022 đã được kiểm toán.',
+        ],
+        [
+            'title' => 'Báo cáo thường niên năm 2022',
+            'year' => '2022',
+            'file_url' => '/070404-vn-summary-fs.pdf',
+            'pdf_url' => '/070404-vn-summary-fs.pdf',
+            'category' => 'Báo cáo thường niên',
+            'icon' => 'pdf',
+            'description' => 'Báo cáo thường niên của doanh nghiệp năm 2022.',
+        ],
+    ],
+];

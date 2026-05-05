@@ -1,0 +1,68 @@
+<?php
+
+return [
+    [
+        'title' => 'Giấy chứng nhận hệ thống quản lý môi trường TCVN ISO 14001:2015 / ISO 14001:2015',
+        'file_url' => '/070404-vn-summary-fs.pdf',
+        'pdf_url' => '/070404-vn-summary-fs.pdf',
+        'category' => 'Chứng nhận môi trường',
+        'icon' => 'pdf',
+        'description' => 'Tài liệu chứng nhận hệ thống quản lý môi trường theo tiêu chuẩn quốc tế.',
+    ],
+    [
+        'title' => 'Giấy chứng nhận phù hợp tiêu chuẩn Xi măng Poóc lăng hỗn hợp PCB 30, PCB 40',
+        'file_url' => '/070404-vn-summary-fs.pdf',
+        'pdf_url' => '/070404-vn-summary-fs.pdf',
+        'category' => 'Chứng nhận chất lượng',
+        'icon' => 'pdf',
+        'description' => 'Hồ sơ chứng nhận phù hợp tiêu chuẩn sản phẩm xi măng PCB 30 và PCB 40.',
+    ],
+    [
+        'title' => 'Giấy chứng nhận phù hợp Quy chuẩn kỹ thuật quốc gia xi măng poóc lăng PC40 và PC50',
+        'file_url' => '/070404-vn-summary-fs.pdf',
+        'pdf_url' => '/070404-vn-summary-fs.pdf',
+        'category' => 'Quy chuẩn kỹ thuật',
+        'icon' => 'pdf',
+        'description' => 'Chứng nhận phù hợp quy chuẩn kỹ thuật quốc gia đối với sản phẩm xi măng PC40 và PC50.',
+    ],
+    [
+        'title' => 'Giấy chứng nhận sản xuất, cung ứng xi măng và clanhke',
+        'file_url' => '/070404-vn-summary-fs.pdf',
+        'pdf_url' => '/070404-vn-summary-fs.pdf',
+        'category' => 'Năng lực sản xuất',
+        'icon' => 'pdf',
+        'description' => 'Tài liệu xác nhận năng lực sản xuất và cung ứng xi măng, clanhke.',
+    ],
+    [
+        'title' => 'Giấy chứng nhận phù hợp tiêu chuẩn Clanhke xi măng Poóc lăng thương phẩm CPC50',
+        'file_url' => '/070404-vn-summary-fs.pdf',
+        'pdf_url' => '/070404-vn-summary-fs.pdf',
+        'category' => 'Clinker',
+        'icon' => 'pdf',
+        'description' => 'Hồ sơ chứng nhận sản phẩm clanhke CPC50 đạt yêu cầu tiêu chuẩn công bố.',
+    ],
+    [
+        'title' => 'Giấy chứng nhận phù hợp tiêu chuẩn Xi măng Poóc lăng PC40, PC50',
+        'file_url' => '/070404-vn-summary-fs.pdf',
+        'pdf_url' => '/070404-vn-summary-fs.pdf',
+        'category' => 'Chứng nhận chất lượng',
+        'icon' => 'pdf',
+        'description' => 'Chứng nhận sản phẩm xi măng Poóc lăng PC40, PC50 đạt tiêu chuẩn chất lượng.',
+    ],
+    [
+        'title' => 'Giấy chứng nhận hệ thống quản lý môi trường TCVN ISO 14001:2015 / ISO 14001:2015',
+        'file_url' => '/070404-vn-summary-fs.pdf',
+        'pdf_url' => '/070404-vn-summary-fs.pdf',
+        'category' => 'Chứng nhận môi trường',
+        'icon' => 'pdf',
+        'description' => 'Bản sao chứng nhận hệ thống quản lý môi trường phục vụ công bố thông tin.',
+    ],
+    [
+        'title' => 'Giấy chứng nhận hệ thống quản lý môi trường TCVN ISO 14001:2015 / ISO 14001:2015',
+        'file_url' => '/070404-vn-summary-fs.pdf',
+        'pdf_url' => '/070404-vn-summary-fs.pdf',
+        'category' => 'Chứng nhận môi trường',
+        'icon' => 'pdf',
+        'description' => 'Bản tài liệu tham chiếu thuộc nhóm hồ sơ môi trường của doanh nghiệp.',
+    ],
+];
