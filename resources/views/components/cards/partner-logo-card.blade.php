@@ -1,3 +1,3 @@
-<div class="relative flex items-center justify-center overflow-hidden rounded-sm border border-[var(--color-border)] bg-white p-4 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 motion-partner motion-border-card reveal reveal-up" data-animate style="min-height: 80px;">
-    <img src="{{ $partner['image'] }}" alt="{{ $partner['name'] }}" loading="lazy" width="140" height="60" class="max-h-12 max-w-[120px] object-contain">
-</div>
+<a href="{{ $partner['href'] ?? '#' }}" target="_blank" class="group relative flex items-center justify-center overflow-hidden rounded-sm border border-[var(--color-border)] bg-white p-2 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300 motion-border-card reveal reveal-up shadow-sm hover:shadow-md" data-animate style="min-height: 100px;">
+    <img src="{{ $partner['image'] }}" alt="{{ $partner['name'] }}" loading="lazy" class="h-auto max-h-[80px] w-auto max-w-full object-contain transform group-hover:scale-105 transition-transform duration-300">
+</a>
