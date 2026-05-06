@@ -40,7 +40,7 @@
 
     <main class="min-h-screen bg-white">
         <div class="border-b border-gray-200 bg-gray-50 py-4">
-            <div class="mx-auto max-w-7xl px-4 md:px-8">
+            <div class="max-w-[1440px] px-4 md:px-8 mx-auto">
                 <nav class="flex text-sm font-medium text-gray-500" aria-label="Breadcrumb">
                     <ol class="flex items-center space-x-2">
                         <li><a href="{{ route('home') }}" class="hover:text-[#ED1C24]">Trang chủ</a></li>
@@ -61,7 +61,7 @@
         @include('sections.products.product-content')
 
         <section id="contact" class="bg-gray-900 py-20">
-            <div class="mx-auto max-w-7xl px-4 text-center">
+            <div class="mx-auto max-w-[1440px] px-4 md:px-8 text-center">
                 <h2 class="mb-6 text-3xl font-black text-white md:text-5xl">LIÊN HỆ ĐẶT HÀNG NGAY</h2>
                 <p class="mx-auto mb-10 max-w-2xl text-lg text-gray-400">Chúng tôi luôn sẵn sàng cung cấp các sản phẩm xi măng chất lượng cao nhất cho mọi công trình của bạn.</p>
                 <div class="flex flex-col justify-center gap-6 md:flex-row">

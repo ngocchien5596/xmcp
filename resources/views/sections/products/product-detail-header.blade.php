@@ -1,5 +1,5 @@
 <div class="py-12 md:py-16 bg-white border-b border-gray-100">
-    <div class="max-w-7xl mx-auto px-4 md:px-8">
+    <div class="max-w-[1440px] mx-auto px-4 md:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-center">
             <!-- Left Column: Product Image -->
             <div class="w-full">

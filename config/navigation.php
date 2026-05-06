@@ -10,6 +10,7 @@ return [
             'children' => [
                 ['title' => 'Giới thiệu chung', 'href' => '/gioi-thieu', 'route' => 'introduction'],
                 ['title' => 'Thông tin công ty', 'href' => '/thong-tin-cong-ty', 'route' => 'company.info'],
+                ['title' => 'Công trình tiêu biểu', 'href' => '/du-an', 'route' => 'projects.index'],
             ],
         ],
         [
@@ -25,7 +26,7 @@ return [
         ['title' => 'Tin tức', 'href' => '/tin-tuc', 'route' => 'news.index'],
         [
             'title' => 'Công bố thông tin',
-            'href' => '/cong-bo-thong-tin',
+            'href' => '/chinh-sach-chat-luong',
             'children' => [
                 ['title' => 'Chính sách chất lượng', 'href' => '/chinh-sach-chat-luong', 'route' => 'quality-policy.index'],
                 ['title' => 'Báo cáo tài chính', 'href' => '/bao-cao-tai-chinh'],

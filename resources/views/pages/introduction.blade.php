@@ -53,10 +53,10 @@
 
 <!-- About Us Section -->
 <section class="py-12 md:py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 md:px-8">
+    <div class="max-w-[1440px] mx-auto px-4 md:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div class="rounded-lg overflow-hidden shadow-2xl reveal reveal-left" data-animate>
-                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?q=80&w=2232&auto=format&fit=crop" alt="Nhà máy Xi Măng Cẩm Phả" class="w-full h-auto object-cover aspect-[4/3] motion-image">
+                <img src="{{ asset('images/xm1.jpg') }}" alt="Nhà máy Xi Măng Cẩm Phả" class="w-full h-auto object-cover aspect-[4/3] motion-image">
             </div>
             <div>
                 <p class="text-gray-500 font-medium mb-2">Về chúng tôi</p>
@@ -94,7 +94,7 @@
 
 <!-- Vision, Mission, Core Values Section -->
 <section class="py-16 md:py-24" style="background-color: #F5EBE1; background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png');">
-    <div class="max-w-7xl mx-auto px-4 md:px-8">
+    <div class="max-w-[1440px] mx-auto px-4 md:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <!-- Left side: Interactive Tab Layout -->
             <div>
@@ -329,50 +329,50 @@
 
     <div class="max-w-7xl mx-auto px-4 relative z-10">
         <!-- Section Header with Red slashes -->
-        <div class="flex items-center gap-4 mb-12">
+        <div class="flex items-center gap-4 mb-12 section-title-animate" data-animate>
             <h2 class="text-2xl md:text-3xl font-bold text-gray-900">Những cột mốc quan trọng</h2>
             <x-ui.brand-mark size="lg" :bar-width="56" />
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8" data-stagger-container>
             <!-- Milestone 1 -->
-            <div class="bg-white shadow-lg border border-gray-100 hover:shadow-xl transition-shadow group motion-card motion-border-card reveal reveal-up" data-animate>
-                <div class="h-56 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1528605105345-5344ea20e269?q=80&w=2070&auto=format&fit=crop" alt="Milestone 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                </div>
-                <div class="p-6">
-                    <h3 class="text-lg font-bold text-gray-900 mb-3 line-clamp-2">Hoạt động "Hiến máu nhân đạo" -Trao đời sự sống</h3>
-                    <p class="text-sm text-gray-600 line-clamp-4 text-justify">
-                        Ngày 27 và 28/05/2020, Công ty CP Xi măng Cẩm Phả đã tổ chức Đại hội Đảng bộ Công ty lần thứ III, nhiệm kỳ 2020 - 2025 với quyết tâm xây dựng Công ty trở thành đơn vị "Sản xuất xi măng có năng suất và chất lượng ổn định thuộc top đầu về hiệu quả SXKD trong ngành Xi măng Việt Nam"
-                    </p>
-                </div>
-            </div>
+            @php
+                $milestone1 = [
+                    'slug' => 'hien-mau-nhan-dao-trao-doi-su-song',
+                    'image' => 'https://images.unsplash.com/photo-1528605105345-5344ea20e269?q=80&w=2070&auto=format&fit=crop',
+                    'title' => 'Hoạt động "Hiến máu nhân đạo" - Trao đời sự sống',
+                    'description' => 'Ngày 27 và 28/05/2020, Công ty CP Xi măng Cẩm Phả đã tổ chức Đại hội Đảng bộ Công ty lần thứ III, nhiệm kỳ 2020 - 2025 với quyết tâm xây dựng Công ty trở thành đơn vị "Sản xuất xi măng có năng suất và chất lượng ổn định thuộc top đầu về hiệu quả SXKD."',
+                    'year' => '2020',
+                    'badge' => 'HOẠT ĐỘNG CÔNG TY'
+                ];
+            @endphp
+            <x-cards.feature-card :item="$milestone1" variant="news" />
             
             <!-- Milestone 2 -->
-            <div class="bg-white shadow-lg border border-gray-100 hover:shadow-xl transition-shadow group motion-card motion-border-card reveal reveal-up" data-animate>
-                <div class="h-56 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop" alt="Milestone 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                </div>
-                <div class="p-6">
-                    <h3 class="text-lg font-bold text-gray-900 mb-3 line-clamp-2">Đại hội Đảng bộ Công ty lần thứ III, nhiệm kỳ 2020 - 2025</h3>
-                    <p class="text-sm text-gray-600 line-clamp-4 text-justify">
-                        Ngày 27 và 28/05/2020, Công ty CP Xi măng Cẩm Phả đã tổ chức Đại hội Đảng bộ Công ty lần thứ III, nhiệm kỳ 2020 - 2025 với quyết tâm xây dựng Công ty trở thành đơn vị "Sản xuất xi măng có năng suất và chất lượng ổn định thuộc top đầu về hiệu quả SXKD trong ngành Xi măng Việt Nam"
-                    </p>
-                </div>
-            </div>
+            @php
+                $milestone2 = [
+                    'slug' => 'dai-hoi-dang-bo-cong-ty-lan-thu-iii',
+                    'image' => 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop',
+                    'title' => 'Đại hội Đảng bộ Công ty lần thứ III, nhiệm kỳ 2020 - 2025',
+                    'description' => 'Ngày 27 và 28/05/2020, Công ty CP Xi măng Cẩm Phả đã tổ chức Đại hội Đảng bộ Công ty lần thứ III, nhiệm kỳ 2020 - 2025 với quyết tâm xây dựng Công ty trở thành đơn vị "Sản xuất xi măng có năng suất và chất lượng ổn định thuộc top đầu về hiệu quả SXKD."',
+                    'year' => '2020',
+                    'badge' => 'HOẠT ĐỘNG CÔNG TY'
+                ];
+            @endphp
+            <x-cards.feature-card :item="$milestone2" variant="news" />
             
             <!-- Milestone 3 -->
-            <div class="bg-white shadow-lg border border-gray-100 hover:shadow-xl transition-shadow group motion-card motion-border-card reveal reveal-up" data-animate>
-                <div class="h-56 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=2070&auto=format&fit=crop" alt="Milestone 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                </div>
-                <div class="p-6">
-                    <h3 class="text-lg font-bold text-gray-900 mb-3 line-clamp-2">Lễ trao thưởng chuyển đổi số Việt Nam - Viet Nam digital awards 2020</h3>
-                    <p class="text-sm text-gray-600 line-clamp-4 text-justify">
-                        Ngày 27 và 28/05/2020, Công ty CP Xi măng Cẩm Phả đã tổ chức Đại hội Đảng bộ Công ty lần thứ III, nhiệm kỳ 2020 - 2025 với quyết tâm xây dựng Công ty trở thành đơn vị "Sản xuất xi măng có năng suất và chất lượng ổn định thuộc top đầu về hiệu quả SXKD trong ngành Xi măng Việt Nam"
-                    </p>
-                </div>
-            </div>
+            @php
+                $milestone3 = [
+                    'slug' => 'le-trao-thuong-chuyen-doi-so-viet-nam-2020',
+                    'image' => 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=2070&auto=format&fit=crop',
+                    'title' => 'Lễ trao thưởng chuyển đổi số Việt Nam - Viet Nam digital awards 2020',
+                    'description' => 'Ngày 27 và 28/05/2020, Công ty CP Xi măng Cẩm Phả đã tổ chức Đại hội Đảng bộ Công ty lần thứ III, nhiệm kỳ 2020 - 2025 với quyết tâm xây dựng Công ty trở thành đơn vị "Sản xuất xi măng có năng suất và chất lượng ổn định thuộc top đầu về hiệu quả SXKD."',
+                    'year' => '2020',
+                    'badge' => 'HOẠT ĐỘNG CÔNG TY'
+                ];
+            @endphp
+            <x-cards.feature-card :item="$milestone3" variant="news" />
         </div>
     </div>
 </section>

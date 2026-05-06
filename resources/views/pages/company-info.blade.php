@@ -55,7 +55,7 @@
 
 <!-- Detailed Company Info Section -->
 <section class="py-12 md:py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-4 md:px-8">
+    <div class="max-w-[1440px] mx-auto px-4 md:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             <!-- Left: Factory Image -->
             <div class="rounded-sm overflow-hidden shadow-lg border border-gray-100 motion-border-card">
@@ -113,7 +113,7 @@
 
 <!-- Business Sectors Section -->
 <section class="py-16 md:py-24 bg-[#FDF6F0]">
-    <div class="max-w-7xl mx-auto px-4 md:px-8">
+    <div class="max-w-[1440px] mx-auto px-4 md:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <!-- Left: List -->
             <div>
@@ -168,7 +168,7 @@
 
 <!-- Milestones Section -->
 <section class="py-16 md:py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-4 md:px-8">
+    <div class="max-w-[1440px] mx-auto px-4 md:px-8">
         <div class="flex items-center gap-6 mb-12">
             <h2 class="text-2xl md:text-3xl font-black text-[#222] uppercase tracking-tight">Những cột mốc quan trọng</h2>
             <x-ui.brand-mark size="md" :bar-width="56" />

@@ -11,16 +11,12 @@
     ])
 
     {{-- Category Tabs --}}
-    <div class="bg-white border-b border-gray-100">
-        <div class="max-w-[1440px] mx-auto px-4 md:px-8">
-            <x-ui.category-tabs 
-                :categories="$categories" 
-                :currentValue="$activeCategory" 
-                baseRoute="news.index"
-                queryKey="category"
-            />
-        </div>
-    </div>
+    <x-ui.sticky-category-tabs 
+        :categories="$categories" 
+        :currentValue="$activeCategory" 
+        baseRoute="news.index"
+        queryKey="category"
+    />
 
     {{-- Featured News (Only show on 'All' category and first page) --}}
     @if(!$activeCategory && $pagination['current_page'] == 1)

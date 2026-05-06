@@ -1,21 +1,22 @@
 <a href="{{ route('products.show', $product['slug']) }}" 
-    class="motion-border-card group relative block h-[380px] w-[260px] overflow-hidden bg-[#222] md:h-[480px] md:w-[340px] lg:w-[360px] reveal reveal-up" 
-    style="overflow: hidden !important;"
+    class="group relative block h-[440px] w-[260px] md:w-[340px] lg:w-[360px] overflow-hidden rounded-[4px] bg-black md:h-[510px] cursor-pointer reveal reveal-up motion-border-card" 
     data-animate>
     
     <!-- Background Image -->
-    <img src="{{ asset($product['image']) }}" alt="{{ $product['title'] }}" loading="lazy" width="400" height="533" 
-        class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04] motion-image">
+    <img 
+        src="{{ asset($product['image']) }}" 
+        alt="{{ $product['title'] }}" 
+        loading="lazy" 
+        class="h-full w-full object-contain transition-transform duration-500 group-hover:scale-[1.04]"
+    >
     
-    <!-- Hover Detail Overlay (Visible only on Hover) -->
-    <div class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center p-6 text-center opacity-0 group-hover:opacity-100 transition-all duration-500 z-30">
-        <div class="transform translate-y-4 transition-transform duration-500 group-hover:translate-y-0">
-            <h3 class="text-lg font-black uppercase tracking-widest text-white mb-2">{{ $product['title'] }}</h3>
-            <span class="inline-block border-b-2 border-[var(--color-brand-red)] pb-1 text-[10px] font-bold uppercase tracking-[0.2em] text-white">
-                Khám phá ngay
-            </span>
-        </div>
+    <!-- Suble Gradient Overlay (Only at the bottom 40% for maximum image brightness) -->
+    <div class="absolute bottom-0 left-0 right-0 h-2/5 bg-gradient-to-t from-black/50 to-transparent"></div>
+    
+    <!-- Product Title at Bottom -->
+    <div class="absolute bottom-0 left-0 right-0 px-5 pb-6">
+        <h3 class="text-center text-[15px] font-black uppercase tracking-wide text-white">
+            {{ $product['title'] }}
+        </h3>
     </div>
-
-    <!-- Border highlight on hover (handled by motion-border-card) -->
 </a>

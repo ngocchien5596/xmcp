@@ -1,5 +1,5 @@
 <div class="border-t border-gray-100 bg-gray-50 py-16 md:py-24">
-    <div class="mx-auto max-w-7xl px-4 md:px-8">
+    <div class="mx-auto max-w-[1440px] px-4 md:px-8">
         <div class="flex flex-col gap-12 md:gap-16 lg:flex-row">
             <div class="lg:w-2/3">
                 <div class="rounded-sm bg-white p-8 shadow-sm motion-border-card md:p-12">

@@ -6,7 +6,7 @@
 @endphp
 
 <section class="py-12 bg-white">
-    <div class="max-w-7xl mx-auto px-4">
+    <div class="max-w-[1440px] mx-auto px-4 md:px-8">
         <div class="flex items-center gap-3 mb-8">
             <div class="w-1.5 h-8 bg-[#ED1C24]"></div>
             <h2 class="text-2xl font-black uppercase tracking-tight text-black">Thông báo nổi bật</h2>

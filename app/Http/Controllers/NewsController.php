@@ -17,11 +17,11 @@ class NewsController extends Controller
             ? $allArticles->where('category', $activeCategory)->sortByDesc('published_at')
             : $allArticles->sortByDesc('published_at');
 
-        // Prepare featured articles (is_featured = true, or latest 4)
+        // Prepare featured articles (is_featured = true, or latest 5)
         // Usually shown only on the first page of "All" category
-        $featuredArticles = $allArticles->where('is_featured', true)->take(4);
+        $featuredArticles = $allArticles->where('is_featured', true)->take(5);
         if ($featuredArticles->isEmpty()) {
-            $featuredArticles = $allArticles->sortByDesc('published_at')->take(4);
+            $featuredArticles = $allArticles->sortByDesc('published_at')->take(5);
         }
 
         // Manual pagination

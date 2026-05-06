@@ -6,42 +6,80 @@ document.addEventListener('DOMContentLoaded', function () {
     initMobileMenu();
     initPdfModal();
     initScrollReveal();
-    initProductCarousel();
+    initHorizontalCarousels();
+    initStickyCategoryTabs();
 });
 
-function initProductCarousel() {
-    document.querySelectorAll('[data-product-carousel]').forEach((carousel) => {
-        const section = carousel.closest('section');
+/**
+ * Sticky Category Tabs - Shadow on scroll
+ */
+function initStickyCategoryTabs() {
+    const tabs = document.querySelector('.sticky-category-tabs');
+    if (!tabs) return;
+
+    // Create a sentinel element to detect when the tabs become sticky
+    const sentinel = document.createElement('div');
+    sentinel.classList.add('sticky-sentinel');
+    sentinel.style.position = 'absolute';
+    sentinel.style.top = '0';
+    sentinel.style.height = '1px';
+    sentinel.style.width = '100%';
+    sentinel.style.pointerEvents = 'none';
+    sentinel.style.visibility = 'hidden';
+    
+    // Insert sentinel before the tabs wrapper
+    tabs.parentNode.insertBefore(sentinel, tabs);
+
+    const headerHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--site-header-height')) || 72;
+
+    const observer = new IntersectionObserver(
+        ([entry]) => {
+            // If the sentinel is NOT intersecting with the top of the viewport 
+            // (considering the header offset), then the tabs are "stuck"
+            tabs.classList.toggle('is-stuck', entry.boundingClientRect.top < headerHeight);
+        },
+        {
+            rootMargin: `-${headerHeight}px 0px 0px 0px`,
+            threshold: [0, 1]
+        }
+    );
+
+    observer.observe(sentinel);
+}
+
+function initHorizontalCarousels() {
+    document.querySelectorAll('[data-carousel]').forEach((track) => {
+        const section = track.closest('section');
         if (!section) return;
 
-        const prev = section.querySelector('.product-carousel-prev');
-        const next = section.querySelector('.product-carousel-next');
+        const prev = section.querySelector('.js-carousel-prev');
+        const next = section.querySelector('.js-carousel-next');
 
         if (!prev || !next) return;
 
         const getStep = () => {
-            const firstCard = carousel.querySelector(':first-child');
-            if (!firstCard) return 360;
-            const style = window.getComputedStyle(carousel);
+            const firstItem = track.querySelector('.snap-start');
+            if (!firstItem) return 320;
+            const style = window.getComputedStyle(track);
             const gap = parseInt(style.columnGap || style.gap || '24', 10);
-            return firstCard.getBoundingClientRect().width + gap;
+            return firstItem.getBoundingClientRect().width + gap;
         };
 
         const updateButtons = () => {
-            const maxScroll = carousel.scrollWidth - carousel.clientWidth - 2;
-            prev.disabled = carousel.scrollLeft <= 2;
-            next.disabled = carousel.scrollLeft >= maxScroll;
+            const maxScroll = track.scrollWidth - track.clientWidth - 2;
+            prev.disabled = track.scrollLeft <= 2;
+            next.disabled = track.scrollLeft >= maxScroll;
         };
 
         prev.addEventListener('click', () => {
-            carousel.scrollBy({ left: -getStep(), behavior: 'smooth' });
+            track.scrollBy({ left: -getStep(), behavior: 'smooth' });
         });
 
         next.addEventListener('click', () => {
-            carousel.scrollBy({ left: getStep(), behavior: 'smooth' });
+            track.scrollBy({ left: getStep(), behavior: 'smooth' });
         });
 
-        carousel.addEventListener('scroll', updateButtons, { passive: true });
+        track.addEventListener('scroll', updateButtons, { passive: true });
         window.addEventListener('resize', updateButtons);
         
         // Initial state

@@ -1,7 +1,7 @@
 @php
     $site = config('site');
     $footerLinks = $site['footer_links'];
-    $productTags = $site['product_tags'];
+    $products = config('products.products');
     $socialLinks = $site['social_links'];
 @endphp
 
@@ -95,12 +95,6 @@
             </div>
         </div>
 
-        <!-- Product Tags -->
-        <div class="mt-16 flex flex-wrap gap-2 border-t border-[#EEE] pt-8">
-            @foreach($productTags as $tag)
-                <a href="{{ route('products.index') }}" class="rounded-sm bg-[#F5F5F5] px-4 py-2 text-[12px] font-bold text-[#666] transition-all hover:bg-[var(--color-brand-red)] hover:text-white uppercase tracking-tighter">{{ $tag }}</a>
-            @endforeach
-        </div>
     </div>
 
     <!-- Bottom Bar -->

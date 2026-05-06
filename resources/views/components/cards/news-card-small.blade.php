@@ -1,18 +1,17 @@
 @props(['article'])
 
-<article class="group relative flex gap-4 overflow-hidden rounded-sm border border-gray-100 bg-white p-3 motion-border-card" style="display: flex; gap: 16px; margin-bottom: 24px;">
+<article class="group relative flex gap-4 overflow-hidden rounded-sm border border-gray-100 bg-white p-3 motion-border-card" style="display: flex; gap: 16px;">
     {{-- Thumbnail --}}
     <a href="{{ route('news.show', $article['slug']) }}" 
        class="block shrink-0 overflow-hidden bg-gray-100"
        style="width: 180px; flex-shrink: 0; aspect-ratio: 16/9; overflow: hidden; position: relative;">
-        <img src="{{ $article['image'] }}" 
+        <img src="{{ asset($article['image']) }}" 
              alt="{{ $article['title'] }}" 
              class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
              style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
              
         {{-- Category Badge --}}
-        <div class="absolute top-0 right-0 bg-[#ED1C24] text-white font-bold uppercase z-20"
-             style="font-size: 9px; padding: 4px 6px; letter-spacing: 0.5px; white-space: nowrap;">
+        <div class="absolute top-2 left-2 bg-[#ED1C24] text-white px-2 py-1 text-[10px] font-black uppercase tracking-wider shadow-md z-20">
             @php
                 $cat = collect(config('news.categories'))->firstWhere('value', $article['category']);
                 $catName = $cat ? $cat['label'] : $article['category'];

@@ -39,7 +39,7 @@ return [
             'title' => 'Xi măng PCB 40CN',
             'subtitle' => 'Cường độ cao cho công trình công nghiệp và hạ tầng',
             'use_case' => 'Chuyên dùng cho cầu cống, đường giao thông, nhà xưởng công nghiệp',
-            'image' => '/img/products/cement-set.png',
+            'image' => 'images/pcb40.png',
             'benefits' => [
                 'Cường độ nén cao, chịu tải trọng lớn',
                 'Tốc độ phát triển cường độ nhanh',
@@ -64,7 +64,7 @@ return [
             'title' => 'Xi măng PC 50',
             'subtitle' => 'Đẳng cấp cho những công trình siêu trọng điểm',
             'use_case' => 'Nhà cao tầng, đập thủy điện, sân bay, cầu vượt biển',
-            'image' => '/img/products/cement-set.png',
+            'image' => 'images/pcb40.png',
             'benefits' => [
                 'Cường độ nén cực cao (trên 50 MPa)',
                 'Hàm lượng khoáng C3S cao vượt trội',
@@ -89,7 +89,7 @@ return [
             'title' => 'Xi măng PCB 40DD',
             'subtitle' => 'Sản phẩm đa dụng cho mọi hạng mục công trình',
             'use_case' => 'Sử dụng cho cả đổ bê tông, xây tường và trát bề mặt',
-            'image' => '/img/products/cement-set.png',
+            'image' => 'images/xi-mang-da-dung.png',
             'benefits' => [
                 'Tính công tác tốt, vữa dẻo, bê tông đặc chắc',
                 'Cường độ cao ổn định lâu dài',
@@ -114,7 +114,7 @@ return [
             'title' => 'Xi măng xỉ PCBbfs40',
             'subtitle' => 'Bền bỉ vượt trội trong môi trường xâm thực',
             'use_case' => 'Công trình ven biển, đập nước, bê tông khối lớn',
-            'image' => '/img/products/cement-set.png',
+            'image' => 'images/pcb40.png',
             'benefits' => [
                 'Khả năng chống thấm cực tốt',
                 'Chịu được nước mặn và môi trường phèn chua',
@@ -192,7 +192,7 @@ return [
             'title' => 'Xi măng xỉ lò cao',
             'subtitle' => 'Phụ gia khoáng hoạt tính cho bê tông hiệu năng cao',
             'use_case' => 'Sản xuất bê tông cường độ cao, bê tông bền sunfat, bê tông tự đầm',
-            'image' => '/img/products/clinker-raw.png',
+            'image' => 'images/ximang_xlc.jpg',
             'benefits' => [
                 'Tăng độ đặc chắc và khả năng chống thấm cho bê tông',
                 'Cải thiện độ bền lâu dài, chống lại các tác nhân ăn mòn',
@@ -243,7 +243,7 @@ return [
             'title' => 'Clinker CPC 50',
             'subtitle' => 'Nguyên liệu cốt lõi đạt tiêu chuẩn quốc tế',
             'use_case' => 'Làm nguyên liệu chính để sản xuất các loại xi măng chất lượng cao',
-            'image' => '/img/products/clinker-raw.png',
+            'image' => 'images/Cement-Clinker.jpg',
             'benefits' => [
                 'Hàm lượng khoáng Alite (C3S) cao và ổn định',
                 'Độ hoạt tính lớn, dễ nghiền, tiết kiệm năng lượng',

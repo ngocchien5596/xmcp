@@ -2,34 +2,24 @@
 
 @php
     $featured = $items->first();
-    $others = $items->skip(1)->take(3);
+    $others = $items->skip(1)->take(4);
 @endphp
 
-<section class="py-12 md:py-16 bg-white" style="padding-top: 48px; padding-bottom: 48px;">
-    <div class="max-w-[1440px] mx-auto px-4 md:px-8" style="max-width: 1200px; margin: 0 auto; padding: 0 16px;">
-        {{-- Section Header --}}
-        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 32px;">
-            <h2 style="margin: 0; font-size: 24px; font-weight: 700; color: #111;">Tin tức nổi bật</h2>
-            {{-- Red Slashes --}}
-            <div style="display: flex; gap: 4px; color: #ED1C24; transform: skewX(-20deg);">
-                <div style="width: 8px; height: 16px; background-color: #ED1C24;"></div>
-                <div style="width: 8px; height: 16px; background-color: #ED1C24;"></div>
-                <div style="width: 32px; height: 16px; background-color: #ED1C24;"></div>
-            </div>
-        </div>
+<section class="py-12 md:py-16 bg-white">
+    <div class="max-w-[1440px] mx-auto px-4 md:px-8">
 
-        {{-- Featured Content Grid - Using Flex for robustness --}}
-        <div class="featured-flex-container" style="display: flex; flex-wrap: wrap; gap: 32px; align-items: stretch;">
+        {{-- Featured Content Grid --}}
+        <div class="flex flex-wrap items-stretch gap-8">
             {{-- Main Featured Card (Left) - ~65% width --}}
-            <div style="flex: 1 1 600px; min-width: 300px; display: flex; flex-direction: column;">
+            <div class="flex min-w-[300px] flex-1 flex-col">
                 @if($featured)
                     <x-cards.news-card-featured :article="$featured" />
                 @endif
             </div>
 
             {{-- Small Sidebar Items (Right) - ~35% width --}}
-            <div style="flex: 0 1 400px; min-width: 300px; display: flex; flex-direction: column;">
-                <div style="display: flex; flex-direction: column; height: 100%; justify-content: space-between;">
+            <div class="flex min-w-[300px] flex-[0_1_420px] flex-col">
+                <div class="flex h-full flex-col gap-4">
                     @foreach($others as $article)
                         <x-cards.news-card-small :article="$article" />
                     @endforeach

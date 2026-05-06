@@ -19,7 +19,7 @@
             }
         }
     </style>
-    <div class="max-w-[1440px] mx-auto px-4 md:px-8" style="max-width: 1200px; margin: 0 auto; padding: 0 16px;">
+    <div class="max-w-[1440px] mx-auto px-4 md:px-8">
         {{-- Grid --}}
         @if(count($items) > 0)
             <div class="news-grid-custom">

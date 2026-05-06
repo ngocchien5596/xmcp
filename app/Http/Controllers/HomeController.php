@@ -7,8 +7,21 @@ class HomeController extends Controller
     public function index()
     {
         $site = config('site');
-        $products = collect(config('products.products'))->take(4)->all();
-        $news = collect(config('news.articles'))->sortByDesc('published_at')->take(4)->all();
+        $products = config('products.products');
+        $projects = config('projects.projects');
+        $allArticles = collect(config('news.articles'));
+        
+        // Lấy tin tức nổi bật (không bao gồm tuyển dụng để tránh trùng lặp nếu cần, 
+        // nhưng ở đây cứ lấy 4 bài mới nhất nói chung)
+        $news = $allArticles->sortByDesc('published_at')->take(4)->all();
+        
+        // Lấy các tin tuyển dụng thực tế (full objects cho carousel)
+        $recruitmentArticles = $allArticles->where('category', 'recruitment')
+            ->sortByDesc('published_at')
+            ->all();
+
+        $recruitmentData = $site['recruitment'];
+
         $partners = config('partners');
 
         return view('pages.home', [
@@ -23,9 +36,10 @@ class HomeController extends Controller
             'stats' => $site['stats'],
             'products' => $products,
             'featuredNews' => $news,
-            'recruitment' => $site['recruitment'],
+            'recruitment' => $recruitmentData,
+            'recruitmentArticles' => $recruitmentArticles,
             'cultureItems' => $site['cultures'],
-            'projects' => $site['projects'],
+            'projects' => $projects,
             'partners' => $partners,
         ]);
     }

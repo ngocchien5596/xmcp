@@ -67,33 +67,31 @@
     </div>
 </section>
 
-<!-- Category Navigation -->
-<section class="py-8 md:py-12 bg-white border-b border-gray-100">
-    <div class="max-w-7xl mx-auto px-4">
-        <div class="flex flex-wrap justify-center gap-3 md:gap-4">
-            <x-ui.tab-button :href="route('products.index')" :active="!$currentType">
-                Tất cả
-            </x-ui.tab-button>
-            <x-ui.tab-button :href="route('products.index', ['type' => 'cement'])" :active="$currentType == 'cement'">
-                Xi măng
-            </x-ui.tab-button>
-            <x-ui.tab-button :href="route('products.index', ['type' => 'clinker'])" :active="$currentType == 'clinker'">
-                Clinker
-            </x-ui.tab-button>
-        </div>
-    </div>
-</section>
+@php
+    $categories = [
+        ['label' => 'Tất cả', 'value' => null],
+        ['label' => 'Xi măng', 'value' => 'cement'],
+        ['label' => 'Clinker', 'value' => 'clinker'],
+    ];
+@endphp
+
+<x-ui.sticky-category-tabs 
+    :categories="$categories" 
+    :currentValue="$currentType" 
+    baseRoute="products.index" 
+    queryKey="type"
+/>
 
 <section class="bg-white">
     <div class="space-y-0">
         @foreach($products as $index => $product)
             <div class="{{ $index % 2 !== 0 ? 'bg-gray-50' : 'bg-white' }} py-16 md:py-24">
-                <div class="mx-auto max-w-7xl px-4 md:px-8">
+                <div class="mx-auto max-w-[1440px] px-4 md:px-8">
                     <div class="grid grid-cols-1 items-center gap-12 md:gap-20 lg:grid-cols-2">
                         @if($index % 2 === 0)
                             <div class="order-2 lg:order-1">
                                 <div class="overflow-hidden rounded-sm border-4 border-white bg-white shadow-2xl motion-border-card">
-                                    <img src="{{ $product['image'] }}" alt="{{ $product['title'] }}" class="aspect-[4/3] h-auto w-full bg-gray-50 object-cover" onerror="this.src='https://placehold.co/800x600/ED1C24/FFFFFF?text={{ urlencode($product['title']) }}'">
+                                    <img src="{{ asset($product['image']) }}" alt="{{ $product['title'] }}" class="aspect-[4/3] h-auto w-full bg-gray-50 object-contain" onerror="this.src='https://placehold.co/800x600/ED1C24/FFFFFF?text={{ urlencode($product['title']) }}'">
                                 </div>
                             </div>
 
@@ -145,7 +143,7 @@
 
                             <div class="order-2">
                                 <div class="overflow-hidden rounded-sm border-4 border-white bg-white shadow-2xl motion-border-card">
-                                    <img src="{{ $product['image'] }}" alt="{{ $product['title'] }}" class="aspect-[4/3] h-auto w-full bg-gray-50 object-cover" onerror="this.src='https://placehold.co/800x600/ED1C24/FFFFFF?text={{ urlencode($product['title']) }}'">
+                                    <img src="{{ asset($product['image']) }}" alt="{{ $product['title'] }}" class="aspect-[4/3] h-auto w-full bg-gray-50 object-contain" onerror="this.src='https://placehold.co/800x600/ED1C24/FFFFFF?text={{ urlencode($product['title']) }}'">
                                 </div>
                             </div>
                         @endif

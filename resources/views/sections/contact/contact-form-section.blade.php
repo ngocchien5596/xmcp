@@ -3,7 +3,7 @@
 @endphp
 
 <section class="bg-white py-12 md:py-16">
-    <div class="mx-auto grid w-full max-w-[1280px] grid-cols-1 gap-10 px-4 md:px-5 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:px-6">
+    <div class="mx-auto w-full max-w-[1440px] px-4 md:px-8 grid grid-cols-1 gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
         <div class="rounded-[3px] bg-white">
             @if (session('success'))
                 <div class="mb-6 rounded-[3px] border border-green-200 bg-green-50 px-4 py-3 text-sm font-semibold text-green-700">
