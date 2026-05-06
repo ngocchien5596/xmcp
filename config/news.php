@@ -22,7 +22,7 @@ return [
             'slug' => 'giai-pickleball-mo-rong-2025',
             'title' => 'Giải Pickleball Công ty Xi măng Cẩm Phả mở rộng năm 2025 – Khi thể thao là cầu nối gắn kết và hợp tác trong công việc',
             'excerpt' => 'Chiều ngày 05/11/2025, Công ty Cổ phần Xi măng Cẩm Phả đã tổ chức Giải Pickleball mở rộng năm 2025 trong không khí tưng bừng, phấn khởi và tràn đầy năng lượng.',
-            'content' => '<p>Chiều ngày 05/11/2025, Công ty Cổ phần Xi măng Cẩm Phả đã tổ chức Giải Pickleball mở rộng năm 2025 trong không khí tưng bừng, phấn khởi và tràn đầy năng lượng.</p><p>Giải đấu là dịp để cán bộ công nhân viên giao lưu, rèn luyện sức khỏe và tăng cường tinh thần đoàn kết.</p>',
+            'content' => '<p>Chiều ngày 05/11/2025, Công ty Cổ phần Xi măng Cẩm Phả đã tổ chức Giải Pickleball mở rộng năm 2025 trong không khí tưng bừng, phấn khởi và tràn đầy năng lượng.</p><div class="my-8"><img src="/images/pickleball.webp" alt="Giải Pickleball 2025" class="w-full rounded-lg shadow-lg"><p class="mt-2 text-center text-sm text-gray-500 italic">Toàn cảnh Giải Pickleball Công ty Xi măng Cẩm Phả mở rộng năm 2025</p></div><p>Giải đấu là dịp để cán bộ công nhân viên giao lưu, rèn luyện sức khỏe và tăng cường tinh thần đoàn kết.</p>',
             'image' => 'images/pickleball.webp',
 
 

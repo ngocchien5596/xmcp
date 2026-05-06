@@ -3,11 +3,12 @@
 @section('title', $seo['title'])
 
 @section('content')
-    {{-- Inner Hero --}}
+    @php $hero = config('page-heroes.news'); @endphp
+
     @include('sections.common.inner-hero', [
-        'pageTitle' => 'TIN TỨC',
-        'pageSubtitle' => 'Cập nhật những tin tức mới nhất về hoạt động, sự kiện và thông tin tuyển dụng từ Công ty Cổ phần Xi măng Cẩm Phả.',
-        'bgImage' => 'https://images.unsplash.com/photo-1541888086425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop'
+        'title' => $hero['title'],
+        'subtitle' => $hero['subtitle'],
+        'background' => $hero['background'],
     ])
 
     {{-- Category Tabs --}}

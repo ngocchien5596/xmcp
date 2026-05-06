@@ -1,46 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-<!-- Hero Section -->
-<section class="relative h-[400px] md:h-[500px] flex items-center justify-center overflow-hidden">
-    <div class="absolute inset-0">
-        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2000&auto=format&fit=crop" alt="Hero background" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-[#ED1C24]/80 mix-blend-multiply"></div>
-        <div class="absolute inset-0 bg-[#ED1C24]/40"></div>
-    </div>
-    
-    <div class="relative z-10 text-center px-4 max-w-5xl mx-auto w-full flex flex-col items-center">
-        <h1 class="text-2xl md:text-4xl lg:text-[42px] font-bold text-white mb-6 tracking-wider uppercase drop-shadow-md">THƯƠNG HIỆU XI MĂNG HÀNG ĐẦU VIỆT NAM</h1>
-        
-        <x-ui.laurel-heading title="Top nhà máy chuẩn ISO 9001:2000" size="md" text-class="text-white" />
-    </div>
-    
-    <div class="absolute bottom-8 left-4 md:bottom-12 md:left-12 flex items-center gap-4 text-white">
-        <!-- Chemical/Hexagon Icon Cluster -->
-        <svg class="w-14 h-14 md:w-20 md:h-20 text-white" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.5">
-            <polygon points="30,25 50,15 70,25 70,45 50,55 30,45" />
-            <polygon points="10,55 30,45 50,55 50,75 30,85 10,75" />
-            <polygon points="50,55 70,45 90,55 90,75 70,85 50,75" />
-            <circle cx="30" cy="25" r="2" fill="white"/>
-            <circle cx="50" cy="15" r="2" fill="white"/>
-            <circle cx="70" cy="25" r="2" fill="white"/>
-            <circle cx="70" cy="45" r="2" fill="white"/>
-            <circle cx="50" cy="55" r="2" fill="white"/>
-            <circle cx="30" cy="45" r="2" fill="white"/>
-            <circle cx="10" cy="55" r="2" fill="white"/>
-            <circle cx="10" cy="75" r="2" fill="white"/>
-            <circle cx="30" cy="85" r="2" fill="white"/>
-            <circle cx="50" cy="75" r="2" fill="white"/>
-            <circle cx="70" cy="85" r="2" fill="white"/>
-            <circle cx="90" cy="75" r="2" fill="white"/>
-            <circle cx="90" cy="55" r="2" fill="white"/>
-        </svg>
-        <div class="flex flex-col justify-center">
-            <div class="text-xl md:text-2xl font-bold tracking-wider uppercase">Giới thiệu</div>
-            <div class="text-[13px] md:text-[15px] font-light tracking-wide mt-1">Hệ thống quản lý chất lượng Quốc tế ISO 9001:2015</div>
-        </div>
-    </div>
-</section>
+    @php $hero = config('page-heroes.introduction'); @endphp
+
+    @include('sections.common.inner-hero', [
+        'title' => $hero['title'],
+        'subtitle' => $hero['subtitle'],
+        'background' => $hero['background'],
+    ])
 
 <!-- Quote Section -->
 <section class="py-12 md:py-16 bg-white">
@@ -75,7 +42,7 @@
                     <div class="flex items-center gap-4 flex-1">
                         <div class="w-16 h-16 shrink-0 relative">
                             <!-- Medal icon SVG -->
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Medal_Gold.png" alt="Gold Medal" class="w-full h-full object-contain">
+                            <img src="{{ asset('images/goldmedal.jpg') }}" alt="Gold Medal" class="w-full h-full object-contain">
                         </div>
                         <p class="text-sm font-bold text-gray-800"><span class="block">Tiêu chuẩn ISO 9001:2000</span> và ISO 14001:1996</p>
                     </div>
@@ -285,34 +252,30 @@
         <h2 class="text-3xl md:text-4xl font-bold text-[#ED1C24] text-center mb-16">Danh hiệu & Giải thưởng</h2>
         
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6" data-stagger-container>
-            <!-- Award 1 -->
-            <div class="text-center group cursor-pointer rounded-sm border border-gray-100 bg-white p-4 motion-card motion-border-card transition-all duration-300 reveal reveal-up" data-animate>
-                <div class="bg-white p-2 border border-gray-200 shadow-sm mb-4 h-48 flex items-center justify-center">
-                    <img src="https://images.unsplash.com/photo-1578269174936-2709b6aeb913?q=80&w=1000&auto=format&fit=crop" alt="Certificate 1" class="max-h-full max-w-full object-contain mix-blend-multiply opacity-80">
+            <div class="text-center group cursor-pointer bg-white p-4 transition-all duration-300 reveal reveal-up" data-animate>
+                <div class="bg-white h-48 flex items-center justify-center mb-4">
+                    <img src="{{ asset('images/chuyendoiso.jpg') }}" alt="Giải thưởng chuyển đổi số Việt Nam" class="max-h-full max-w-full object-contain opacity-90 transition-opacity group-hover:opacity-100">
                 </div>
                 <h3 class="font-bold text-gray-800 px-4 group-hover:text-[#ED1C24] transition-colors">Giải thưởng chuyển đổi số Việt Nam</h3>
             </div>
             
-            <!-- Award 2 -->
-            <div class="text-center group cursor-pointer rounded-sm border border-gray-100 bg-white p-4 motion-card motion-border-card transition-all duration-300 reveal reveal-up" data-animate>
-                <div class="bg-white p-2 border border-gray-200 shadow-sm mb-4 h-48 flex items-center justify-center">
-                    <img src="https://images.unsplash.com/photo-1578269174936-2709b6aeb913?q=80&w=1000&auto=format&fit=crop" alt="Certificate 2" class="max-h-full max-w-full object-contain mix-blend-multiply opacity-80">
+            <div class="text-center group cursor-pointer bg-white p-4 transition-all duration-300 reveal reveal-up" data-animate>
+                <div class="bg-white h-48 flex items-center justify-center mb-4">
+                    <img src="{{ asset('images/bangvang.jpg') }}" alt="Bảng vàng doanh nghiệp văn hóa" class="max-h-full max-w-full object-contain opacity-90 transition-opacity group-hover:opacity-100">
                 </div>
                 <h3 class="font-bold text-gray-800 px-4 group-hover:text-[#ED1C24] transition-colors">Bảng vàng doanh nghiệp văn hóa</h3>
             </div>
             
-            <!-- Award 3 -->
-            <div class="text-center group cursor-pointer rounded-sm border border-gray-100 bg-white p-4 motion-card motion-border-card transition-all duration-300 reveal reveal-up" data-animate>
-                <div class="bg-white p-2 border border-gray-200 shadow-sm mb-4 h-48 flex items-center justify-center">
-                    <img src="https://images.unsplash.com/photo-1578269174936-2709b6aeb913?q=80&w=1000&auto=format&fit=crop" alt="Certificate 3" class="max-h-full max-w-full object-contain mix-blend-multiply opacity-80">
+            <div class="text-center group cursor-pointer bg-white p-4 transition-all duration-300 reveal reveal-up" data-animate>
+                <div class="bg-white h-48 flex items-center justify-center mb-4">
+                    <img src="{{ asset('images/cupthuonghieu.jpg') }}" alt="Cup thương hiệu việt năm 2016" class="max-h-full max-w-full object-contain opacity-90 transition-opacity group-hover:opacity-100">
                 </div>
                 <h3 class="font-bold text-gray-800 px-4 group-hover:text-[#ED1C24] transition-colors">Cup thương hiệu việt năm 2016</h3>
             </div>
             
-            <!-- Award 4 -->
-            <div class="text-center group cursor-pointer rounded-sm border border-gray-100 bg-white p-4 motion-card motion-border-card transition-all duration-300 reveal reveal-up" data-animate>
-                <div class="bg-white p-2 border border-gray-200 shadow-sm mb-4 h-48 flex items-center justify-center">
-                    <img src="https://images.unsplash.com/photo-1578269174936-2709b6aeb913?q=80&w=1000&auto=format&fit=crop" alt="Certificate 4" class="max-h-full max-w-full object-contain mix-blend-multiply opacity-80">
+            <div class="text-center group cursor-pointer bg-white p-4 transition-all duration-300 reveal reveal-up" data-animate>
+                <div class="bg-white h-48 flex items-center justify-center mb-4">
+                    <img src="{{ asset('images/topvietnam.jpg') }}" alt="Giải thưởng Top Việt Nam 2011" class="max-h-full max-w-full object-contain opacity-90 transition-opacity group-hover:opacity-100">
                 </div>
                 <h3 class="font-bold text-gray-800 px-4 group-hover:text-[#ED1C24] transition-colors">Giải thưởng Top Việt Nam 2011</h3>
             </div>

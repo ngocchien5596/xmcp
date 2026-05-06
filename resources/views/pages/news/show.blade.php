@@ -1,7 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-    @include('sections.common.inner-hero', ['pageTitle' => 'Tin tức', 'pageSubtitle' => $article['category']])
+    @php $hero = config('page-heroes.news'); @endphp
+
+    @include('sections.common.inner-hero', [
+        'title' => $hero['title'],
+        'subtitle' => $hero['subtitle'],
+        'background' => $hero['background'],
+    ])
 
     <section class="py-12 md:py-16">
         <div class="mx-auto max-w-[1440px] px-4 md:px-8">
@@ -13,7 +19,7 @@
             <div class="grid grid-cols-1 gap-12 lg:grid-cols-3">
                 <article class="lg:col-span-2">
                     <div class="aspect-video overflow-hidden rounded-sm mb-6">
-                        <img src="{{ $article['image'] }}" alt="{{ $article['title'] }}" width="800" height="450" class="h-full w-full object-cover">
+                        <img src="{{ asset($article['image']) }}" alt="{{ $article['title'] }}" width="800" height="450" class="h-full w-full object-cover">
                     </div>
                     <span class="rounded-sm bg-[var(--color-brand-red)] px-3 py-1 text-[10px] font-bold uppercase text-white">{{ $article['category'] }}</span>
                     <h1 class="mt-4 text-2xl font-bold text-[var(--color-text-primary)] md:text-3xl leading-tight">{{ $article['title'] }}</h1>
@@ -34,7 +40,7 @@
                             @foreach($relatedArticles as $related)
                                 <a href="{{ route('news.show', $related['slug']) }}" class="flex gap-3 group">
                                     <div class="h-16 w-20 shrink-0 overflow-hidden rounded-sm">
-                                        <img src="{{ $related['image'] }}" alt="{{ $related['title'] }}" loading="lazy" width="80" height="64" class="h-full w-full object-cover">
+                                        <img src="{{ asset($related['image']) }}" alt="{{ $related['title'] }}" loading="lazy" width="80" height="64" class="h-full w-full object-cover">
                                     </div>
                                     <div>
                                         <p class="text-sm font-medium text-[var(--color-text-primary)] line-clamp-2 group-hover:text-[var(--color-brand-red)] transition-colors">{{ $related['title'] }}</p>

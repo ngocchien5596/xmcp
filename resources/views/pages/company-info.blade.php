@@ -1,46 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-<!-- Hero Section -->
-<section class="relative h-[400px] md:h-[500px] flex items-center justify-center overflow-hidden">
-    <div class="absolute inset-0">
-        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2000&auto=format&fit=crop" alt="Hero background" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-[#ED1C24]/80 mix-blend-multiply"></div>
-        <div class="absolute inset-0 bg-[#ED1C24]/40"></div>
-    </div>
-    
-    <div class="relative z-10 text-center px-4 max-w-5xl mx-auto w-full flex flex-col items-center">
-        <h1 class="text-2xl md:text-4xl lg:text-[42px] font-bold text-white mb-6 tracking-wider uppercase drop-shadow-md">Thương hiệu xi măng hàng đầu Việt Nam</h1>
-        
-        <x-ui.laurel-heading title="Top nhà máy chuẩn ISO 9001:2000" size="md" text-class="text-white" />
-    </div>
-    
-    <div class="absolute bottom-8 left-4 md:bottom-12 md:left-12 flex items-center gap-4 text-white">
-        <!-- Chemical/Hexagon Icon Cluster -->
-        <svg class="w-14 h-14 md:w-20 md:h-20 text-white" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.5">
-            <polygon points="30,25 50,15 70,25 70,45 50,55 30,45" />
-            <polygon points="10,55 30,45 50,55 50,75 30,85 10,75" />
-            <polygon points="50,55 70,45 90,55 90,75 70,85 50,75" />
-            <circle cx="30" cy="25" r="2" fill="white"/>
-            <circle cx="50" cy="15" r="2" fill="white"/>
-            <circle cx="70" cy="25" r="2" fill="white"/>
-            <circle cx="70" cy="45" r="2" fill="white"/>
-            <circle cx="50" cy="55" r="2" fill="white"/>
-            <circle cx="30" cy="45" r="2" fill="white"/>
-            <circle cx="10" cy="55" r="2" fill="white"/>
-            <circle cx="10" cy="75" r="2" fill="white"/>
-            <circle cx="30" cy="85" r="2" fill="white"/>
-            <circle cx="50" cy="75" r="2" fill="white"/>
-            <circle cx="70" cy="85" r="2" fill="white"/>
-            <circle cx="90" cy="75" r="2" fill="white"/>
-            <circle cx="90" cy="55" r="2" fill="white"/>
-        </svg>
-        <div class="flex flex-col justify-center">
-            <div class="text-xl md:text-2xl font-bold tracking-wider uppercase">Giới thiệu chung</div>
-            <div class="text-[13px] md:text-[15px] font-light tracking-wide mt-1">Hệ thống quản lý chất lượng Quốc tế ISO 9001:2015</div>
-        </div>
-    </div>
-</section>
+    @php $hero = config('page-heroes.company-info'); @endphp
+
+    @include('sections.common.inner-hero', [
+        'title' => $hero['title'],
+        'subtitle' => $hero['subtitle'],
+        'background' => $hero['background'],
+    ])
 
 <!-- Quote Section -->
 <section class="py-12 md:py-16 bg-white">

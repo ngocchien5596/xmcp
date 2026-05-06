@@ -103,7 +103,7 @@ return [
 
     'stats' => [
         ['id' => 'stat-1', 'value' => '300', 'label' => 'Tổng số nhân viên', 'unit' => 'Nhân công'],
-        ['id' => 'stat-2', 'value' => '1.300', 'label' => 'Khách hàng mới', 'unit' => 'Nhân công'],
+        ['id' => 'stat-2', 'value' => '1.300', 'label' => 'Khách hàng mới', 'unit' => 'Khách'],
         ['id' => 'stat-3', 'value' => '2.3', 'label' => 'Công suất nhà máy', 'unit' => 'Triệu tấn / Năm'],
         ['id' => 'stat-4', 'value' => '12.000', 'label' => 'Doanh thu thuần', 'unit' => 'Tỷ đồng'],
     ],

@@ -4,21 +4,15 @@
  @section('description', $project['description'])
  
  @section('content')
- <main class="bg-white">
-     <!-- Simple Header -->
-     <div class="border-b border-gray-100 bg-gray-50 py-4">
-         <div class="mx-auto max-w-[1440px] px-4 md:px-8">
-             <nav class="flex text-[11px] font-bold uppercase tracking-widest text-gray-400" aria-label="Breadcrumb">
-                 <ol class="flex items-center space-x-2">
-                     <li><a href="{{ route('home') }}" class="hover:text-[#ED1C24]">Trang chủ</a></li>
-                     <li><span class="mx-2">/</span></li>
-                     <li><a href="{{ route('projects.index') }}" class="hover:text-[#ED1C24]">Dự án</a></li>
-                     <li><span class="mx-2 text-[#ED1C24]">/</span></li>
-                     <li class="truncate text-[#ED1C24]">{{ $project['title'] }}</li>
-                 </ol>
-             </nav>
-         </div>
-     </div>
+    @php $hero = config('page-heroes.projects'); @endphp
+
+    @include('sections.common.inner-hero', [
+        'title' => $hero['title'],
+        'subtitle' => $hero['subtitle'],
+        'background' => $hero['background'],
+    ])
+
+    <main class="bg-white">
  
      <article class="py-12 md:py-20">
          <div class="mx-auto max-w-[1440px] px-4 md:px-8">

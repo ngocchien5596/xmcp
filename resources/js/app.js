@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initScrollReveal();
     initHorizontalCarousels();
     initStickyCategoryTabs();
+    initPcardEffects();
 });
 
 /**
@@ -289,4 +290,43 @@ function initScrollReveal() {
     document.querySelectorAll('.timeline-line-animate').forEach((element) => {
         revealObserver.observe(element);
     });
+}
+
+/**
+ * Premium Product Card (pcard) — Mouse glow + Scroll reveal
+ */
+function initPcardEffects() {
+    var cards = document.querySelectorAll('.pcard');
+    if (!cards.length) return;
+
+    // Mouse glow tracker
+    cards.forEach(function (card) {
+        card.addEventListener('mousemove', function (e) {
+            var rect = this.getBoundingClientRect();
+            this.style.setProperty('--x', (e.clientX - rect.left) + 'px');
+            this.style.setProperty('--y', (e.clientY - rect.top) + 'px');
+        });
+    });
+
+    // Scroll reveal with stagger
+    var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var reveals = document.querySelectorAll('.pcard-reveal');
+
+    if (!reveals.length) return;
+
+    if (prefersReduced) {
+        reveals.forEach(function (el) { el.classList.add('is-visible'); });
+        return;
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    reveals.forEach(function (el) { observer.observe(el); });
 }

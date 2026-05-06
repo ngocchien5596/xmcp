@@ -1,11 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-    {{-- Hero Section --}}
+    @php $hero = config('page-heroes.quality-policy'); @endphp
+
     @include('sections.common.inner-hero', [
-        'pageTitle' => 'CHÍNH SÁCH CHẤT LƯỢNG',
-        'pageSubtitle' => 'Công ty CP xi măng Cẩm Phả áp dụng Hệ thống quản lý chất lượng Quốc tế ISO 9001:2008 đảm bảo kiểm soát chặt chẽ chất lượng sản phẩm từ khâu nhập nguyên liệu',
-        'bgImage' => 'https://images.unsplash.com/photo-1541888086425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop'
+        'title' => $hero['title'],
+        'subtitle' => $hero['subtitle'],
+        'background' => $hero['background'],
     ])
 
     {{-- Documents Grid --}}

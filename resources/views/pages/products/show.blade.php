@@ -38,25 +38,15 @@
         }
     </style>
 
-    <main class="min-h-screen bg-white">
-        <div class="border-b border-gray-200 bg-gray-50 py-4">
-            <div class="max-w-[1440px] px-4 md:px-8 mx-auto">
-                <nav class="flex text-sm font-medium text-gray-500" aria-label="Breadcrumb">
-                    <ol class="flex items-center space-x-2">
-                        <li><a href="{{ route('home') }}" class="hover:text-[#ED1C24]">Trang chủ</a></li>
-                        <li>
-                            <svg class="mx-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"></path></svg>
-                        </li>
-                        <li><a href="{{ route('products.index') }}" class="hover:text-[#ED1C24]">Sản phẩm</a></li>
-                        <li>
-                            <svg class="mx-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"></path></svg>
-                        </li>
-                        <li class="max-w-[200px] truncate text-[#ED1C24] md:max-w-none">{{ $product['title'] }}</li>
-                    </ol>
-                </nav>
-            </div>
-        </div>
+    @php $hero = config('page-heroes.products'); @endphp
 
+    @include('sections.common.inner-hero', [
+        'title' => $hero['title'],
+        'subtitle' => $hero['subtitle'],
+        'background' => $hero['background'],
+    ])
+
+    <main class="min-h-screen bg-white">
         @include('sections.products.product-detail-header')
         @include('sections.products.product-content')
 

@@ -417,8 +417,12 @@ body {
         2px 100%;
 }
 
-.motion-border-card > * {
+/* Ensure children are above the background but allow absolute positioning */
+.motion-border-card > *:not(.absolute) {
     position: relative;
+}
+
+.motion-border-card > * {
     z-index: 1;
 }
 
@@ -696,4 +700,271 @@ body {
 
 .category-tab {
     transition: all var(--motion-dur-fast) var(--motion-ease);
+}
+
+/* ─────────────────────────────────────────────────
+   PREMIUM PRODUCT CARD SYSTEM (pcard)
+   Apple/Stripe-level card interactions
+   ───────────────────────────────────────────────── */
+
+.pcard {
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: pointer;
+    will-change: transform, box-shadow;
+    transition:
+        transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow:
+        0 1px 3px rgba(0,0,0,0.06),
+        0 4px 12px rgba(0,0,0,0.04);
+    --x: 50%;
+    --y: 50%;
+}
+
+.pcard:hover {
+    transform: translateY(-10px);
+    box-shadow:
+        0 20px 40px rgba(237,28,36,0.12),
+        0 8px 16px rgba(0,0,0,0.08);
+}
+
+/* Border Glow — Animated sweep */
+.pcard::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1.5px;
+    border-radius: inherit;
+    background: linear-gradient(
+        120deg,
+        transparent 20%,
+        rgba(237,28,36,0.85) 50%,
+        transparent 80%
+    );
+    background-size: 200% 200%;
+    mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 4;
+    pointer-events: none;
+}
+
+.pcard:hover::before {
+    opacity: 1;
+    animation: pcardBorderSweep 2.4s linear infinite;
+}
+
+@keyframes pcardBorderSweep {
+    0%   { background-position: 200% 50%; }
+    100% { background-position: -100% 50%; }
+}
+
+/* Mouse Glow — Radial follow */
+.pcard::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+        320px circle at var(--x) var(--y),
+        rgba(237,28,36,0.12),
+        transparent 60%
+    );
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.pcard:hover::after {
+    opacity: 1;
+}
+
+/* Image layer */
+.pcard-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #f8f8f8;
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pcard:hover .pcard-img {
+    transform: scale(1.05);
+}
+
+/* Content area */
+.pcard-body {
+    padding: 20px 24px 24px;
+    position: relative;
+    z-index: 2;
+    background: #fff;
+}
+
+.pcard-title {
+    font-size: 1.125rem;
+    font-weight: 900;
+    color: #111;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    line-height: 1.3;
+    transition:
+        color 0.3s ease,
+        transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    transform-origin: left center;
+}
+
+/* Ensure white titles (like on homepage) also turn red on hover */
+.pcard:hover .pcard-title,
+.pcard:hover .pcard-title.text-white {
+    color: #ED1C24 !important;
+    transform: scale(1.02);
+}
+
+.pcard-subtitle {
+    font-size: 0.8125rem;
+    color: #666;
+    margin-top: 6px;
+    line-height: 1.5;
+    font-weight: 500;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* CTA Button — Slide-up reveal */
+.pcard-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    padding: 8px 20px;
+    background: #ED1C24;
+    color: #fff;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    border-radius: 3px;
+    text-decoration: none;
+    opacity: 0;
+    transform: translateY(12px);
+    transition:
+        opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+        background 0.2s ease;
+}
+
+.pcard:hover .pcard-cta {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.pcard-cta:hover {
+    background: #b91c1c;
+}
+
+.pcard-cta svg {
+    width: 14px;
+    height: 14px;
+    transition: transform 0.25s ease;
+}
+
+.pcard-cta:hover svg {
+    transform: translateX(3px);
+}
+
+/* Type badge */
+.pcard-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 5;
+    padding: 4px 12px;
+    font-size: 0.6875rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: #ED1C24;
+    color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 2px 6px rgba(237,28,36,0.3);
+}
+
+/* Use-case ribbon (slides up on hover) */
+.pcard-use-case {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    padding: 10px 16px;
+    background: rgba(237,28,36,0.92);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.4;
+    transform: translateY(100%);
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pcard:hover .pcard-use-case {
+    transform: translateY(0);
+}
+
+/* Scroll reveal */
+.pcard-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.pcard-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+        opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* pcard accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .pcard,
+    .pcard-img,
+    .pcard-overlay,
+    .pcard-title,
+    .pcard-cta,
+    .pcard-reveal,
+    .pcard-use-case,
+    .pcard::before,
+    .pcard::after {
+        transition: none !important;
+        animation: none !important;
+    }
+    .pcard:hover {
+        transform: none;
+    }
+    .pcard:hover .pcard-img {
+        transform: none;
+    }
+    .pcard-reveal {
+        opacity: 1;
+        transform: none;
+    }
+    .pcard:hover .pcard-cta {
+        opacity: 1;
+        transform: none;
+    }
+    .pcard:hover .pcard-use-case {
+        transform: none;
+    }
 }

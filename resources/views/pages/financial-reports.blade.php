@@ -1,11 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-    {{-- Hero Section --}}
+    @php $hero = config('page-heroes.financial-reports'); @endphp
+
     @include('sections.common.inner-hero', [
-        'pageTitle' => 'BÁO CÁO TÀI CHÍNH',
-        'pageSubtitle' => 'Cung cấp thông tin tài chính minh bạch, chính xác và kịp thời cho các cổ đông và nhà đầu tư.',
-        'bgImage' => 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2072&auto=format&fit=crop'
+        'title' => $hero['title'],
+        'subtitle' => $hero['subtitle'],
+        'background' => $hero['background'],
     ])
 
     {{-- Tabs & Filters --}}
